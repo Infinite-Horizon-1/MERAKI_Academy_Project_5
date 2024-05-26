@@ -48,7 +48,7 @@ display: flex;
 flex-direction: column;
 
 }
-.ant-card-body{
+.product .ant-card-body{
     position: relative;
     width: 90vh;
     height: 300px;
