@@ -45,11 +45,24 @@ console.log(err);
                 console.log(err);
             }
         })
-       
+       deleteCarts()
+    }
+    const deleteCarts =async()=>{
+          
+        try{
+            const result =await  axios.delete(`http://localhost:5000/cart`,{
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              },{})
+            console.log(result.data.result);
+        }catch(err) {
+            console.log(err);
+        }
     }
   return (
     <div>
-      <Button className='checkout' onClick={log}>checkout </Button>
+      <Button id='checkout' onClick={log}>checkout </Button>
     </div>
   )
 }

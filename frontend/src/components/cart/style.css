@@ -1,22 +1,24 @@
 .all-products{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items:flex-start;
     justify-content: center;
-    flex-wrap: wrap;
+    position: relative;
+
+   
  
 }
 .product{
     overflow: hidden;
     background: #bbeadd;
     color: #21201e;
-    text-align: center;
-    width: 240px;
+    width: 800px;
     height: 340px;
     padding: 2rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+    align-items:center;
+    justify-content:start;
     border-radius: 10px;
     margin:20px;
     cursor: pointer;
@@ -31,5 +33,48 @@
 .product img{
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    max-height: 300px;
+
+}
+.product #meta{
+    margin-left:50px ;
+    text-align: left;
+
+}
+.product .input{
+position:absolute;
+right: 10px;
+display: flex;
+flex-direction: column;
+
+}
+.ant-card-body{
+    position: relative;
+    width: 90vh;
+    height: 300px;
+    display: flex;
+    align-items: center;
+
+   
+}
+#delete{
+    position: absolute;
+    top: 150px;
+
+}
+.summry{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    border: solid;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content:start ;
+    align-items: start;
+    padding: 20px;
+    row-gap: 10px;
+    
+
 }
