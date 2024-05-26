@@ -142,7 +142,7 @@ useEffect(()=>{
                 />
               }
             >
-             <div> <Meta id='meta'
+             <div id='card-bode'> <Meta id='meta'
                 title={product.title}
                 description= {product.description}
                 

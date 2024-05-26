@@ -101,7 +101,7 @@ const Home = () => {
           products.map((oneProduct, index) => {
             return (
               <div
-                className="ProductDiv"
+                id="ProductDiv"
                 key={index}
                 onClick={() => {
                   navigate(`/product/${oneProduct.id}`);
