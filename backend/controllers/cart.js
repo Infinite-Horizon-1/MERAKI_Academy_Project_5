@@ -73,10 +73,12 @@ const getProductsByUserId = (req, res) => {
       ]
     )
     .then((result) => {
+      console.log(result.rows)
       res.status(200).json({
         success: true,
         message: `All products in the cart of user${userId}`,
         result: result.rows,
+        
       });
     })
     .catch((err) => {
@@ -114,11 +116,35 @@ const itemcountInCart = (req, res) => {
       console.log(err);
     });
 };
+const deleteAllCarts =(req,res)=>{
+  const userId = req.token.userId;
 
+  pool
+    .query(
+      `UPDATE cart SET is_deleted=1 WHERE user_id=$1  RETURNING *`,
+      [userId]
+    )
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        message: "all carts is deleted",
+        result: result.rows,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+        err: err,
+      });
+      console.log(err);
+    });
+}
 
 module.exports = {
   addtoCart,
   deleteFromCart,
   getProductsByUserId,
   itemcountInCart
+  ,deleteAllCarts
 };
